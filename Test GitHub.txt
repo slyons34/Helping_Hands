@@ -1,7 +1,0 @@
-This is a test doing by Maria
-
-<<<<<<< HEAD
-Antonio here!
-=======
-Hello, Maria.
->>>>>>> origin/master
