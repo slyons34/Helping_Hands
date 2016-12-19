@@ -106,6 +106,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DonateController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Data\CategoriesRepository.cs" />
+    <Compile Include="Data\LocationsRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
