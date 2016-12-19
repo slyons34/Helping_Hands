@@ -1,2 +1,7 @@
 This is a test doing by Maria
+<<<<<<< HEAD
 okay, test it.-
+=======
+
+Hello, Maria.
+>>>>>>> origin/master
