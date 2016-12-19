@@ -1,5 +1,12 @@
 A new one
+<<<<<<< HEAD
+got a new one
+=======
 
 Antonio test.
+<<<<<<< HEAD
 
 mike
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
