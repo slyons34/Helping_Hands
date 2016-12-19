@@ -28,6 +28,5 @@ C:\Users\ClevelandCodes\Desktop\Helping_Hands\HelpingHands\HelpingHands\bin\Syst
 C:\Users\ClevelandCodes\Desktop\Helping_Hands\HelpingHands\HelpingHands\bin\System.Web.Webpages.Razor.xml
 C:\Users\ClevelandCodes\Desktop\Helping_Hands\HelpingHands\HelpingHands\bin\System.Web.Helpers.xml
 C:\Users\ClevelandCodes\Desktop\Helping_Hands\HelpingHands\HelpingHands\bin\System.Web.Mvc.xml
-C:\Users\ClevelandCodes\Desktop\Helping_Hands\HelpingHands\HelpingHands\obj\Debug\HelpingHands.csprojResolveAssemblyReference.cache
 C:\Users\ClevelandCodes\Desktop\Helping_Hands\HelpingHands\HelpingHands\obj\Debug\HelpingHands.dll
 C:\Users\ClevelandCodes\Desktop\Helping_Hands\HelpingHands\HelpingHands\obj\Debug\HelpingHands.pdb
