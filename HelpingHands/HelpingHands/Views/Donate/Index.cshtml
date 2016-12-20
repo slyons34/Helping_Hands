@@ -10,15 +10,55 @@
 
 <h2>@ViewBag.GiveHeading</h2>
     <div>
-        <ul>
+        <select id="Select1">
             @foreach (var category in ViewBag.Categories)
             {
-                <li>@category</li>
+                <option> @category</option>
             }
-        </ul>
-    </div>
+         </select>
 
+  <h5 textalign: center>@ViewBag.DonorSignIn</h5> 
+
+        <h4>Choose Location or ContactUs to schedule a pick-up.</h4>
+        <select id="Select1">
+            @*@foreach (var location in MyLocations)
+            {
+
+            }*@
+            <option>
+
+            </option>
+
+        </select> 
+        <h4>When:</h4>
+        <input id="Text1" type="text" />
+
+        <h4>Tell us about your donation:</h4>
+        <textarea id="TextArea1" rows="2" cols="20"></textarea>
+
+        <h4>Quantity(units)</h4>
+        <input id="Text1" type="text" />
+
+        <h4>One time or recurring gift?</h4>
+        <select id="Select1">
+            <option>Give online:</option>
+            <option>Contribute by mail. PLease make checks payable to "Give-N-Feed, Cleveland."</option>
+
+        </select>
+        
+        
+        
+        <br />
+        <input id="Reset1" type="reset" value="reset" />
+        <input id="Submit1" type="submit" value="submit" />
+           
+    </div>
 }
+
+
+
+
+
 
 
 
