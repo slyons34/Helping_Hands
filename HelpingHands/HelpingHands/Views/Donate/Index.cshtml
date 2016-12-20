@@ -5,5 +5,21 @@
 
 <h1>@ViewBag.PageHeading</h1>
 
+@if (ViewBag.Categories.Length > 0)
+{
+
 <h2>@ViewBag.GiveHeading</h2>
+    <div>
+        <ul>
+            @foreach (var category in ViewBag.Categories)
+            {
+                <li>@category</li>
+            }
+        </ul>
+    </div>
+
+}
+
+
+
 

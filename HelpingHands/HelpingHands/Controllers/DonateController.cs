@@ -13,6 +13,13 @@ namespace HelpingHands.Controllers
         {
             ViewBag.PageHeading = "THANKS FOR YOUR GENEROSITY!";
             ViewBag.GiveHeading = "Give Now:";
+            ViewBag.Categories = new string[]
+            {
+                "Time:",
+                "Food:",
+                "Clothes:",
+                "Money:"
+            };
 
             return View();
             //return "Hello Donors!"
