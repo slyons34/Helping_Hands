@@ -11,6 +11,9 @@ namespace HelpingHands.Controllers
         // GET: Donate
         public ActionResult Index()
         {
+            ViewBag.PageHeading = "THANKS FOR YOUR GENEROSITY!";
+            ViewBag.GiveHeading = "Give Now:";
+
             return View();
             //return "Hello Donors!"
         }
