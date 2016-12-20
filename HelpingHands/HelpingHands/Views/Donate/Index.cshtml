@@ -4,33 +4,35 @@
 }
 
 <h1>@ViewBag.PageHeading</h1>
+  
+  <h5 textalign: center>@ViewBag.DonorSignIn <br />
+        <input id="EMAIL" type="email" placeholder="Username" /><br />
+        <input id="Password1" type="password" placeholder="Password" /> <input id="Submit1" type="submit" value="submit" /> </h5> 
+
+
 
 @if (ViewBag.Categories.Length > 0)
 {
 
-<h2>@ViewBag.GiveHeading</h2>
+    <h2>@ViewBag.GiveHeading</h2>
     <div>
         <select id="Select1">
             @foreach (var category in ViewBag.Categories)
             {
                 <option> @category</option>
             }
-         </select>
-
-  <h5 textalign: center>@ViewBag.DonorSignIn</h5> 
+        </select>
 
         <h4>Choose Location or ContactUs to schedule a pick-up.</h4>
         <select id="Select1">
             @*@foreach (var location in MyLocations)
-            {
+                {
 
-            }*@
-            <option>
+                }*@
+            <option></option>
 
-            </option>
-
-        </select> 
-        <h4>When:</h4>
+        </select>
+        <h4>When? Enter date and time:</h4>
         <input id="Text1" type="text" />
 
         <h4>Tell us about your donation:</h4>
@@ -42,16 +44,26 @@
         <h4>One time or recurring gift?</h4>
         <select id="Select1">
             <option>Give online:</option>
-            <option>Contribute by mail. PLease make checks payable to "Give-N-Feed, Cleveland."</option>
+            <option></option>
+
+            <br />
+            <input id="Reset1" type="reset" value="reset" />
+            <input id="Submit1" type="submit" value="submit" />
+
+
 
         </select>
-        
-        
-        
-        <br />
-        <input id="Reset1" type="reset" value="reset" />
-        <input id="Submit1" type="submit" value="submit" />
-           
+
+        <h2>QUESTIONS?</h2>
+        <h3>ContactUs:</h3>
+        <textarea id="TextArea1" rows="2" cols="20"></textarea><input id="Submit1" type="submit" value="submit" />
+        <p>HELPING HANDS</p>
+        <p>Please make checks payable to "Give-N-Need, Cleveland." <br />
+           And send to: <br />
+           3409 Woodland Ave. <br />
+           Cleveland, OH 44115 <br />
+           Phone: 216.525.1964</p>
+
     </div>
 }
 
