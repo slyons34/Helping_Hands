@@ -27,14 +27,14 @@ namespace HelpingHands.Controllers
         }
 
         
-        public ActionResult GiveTime()
-        {
-            ViewBag.Time = new string[]
+        //public ActionResult GiveTime()
+        //{
+        //    ViewBag.Time = new string[]
 
-            {
+        //    {
 
-            };
-            return View();
-        }
+        //    };
+        //    return View();
+        //}
     }
 }

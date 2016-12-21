@@ -18,7 +18,12 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("GIVE-N-NEED", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Register", "Login", "Login", new { area = ""}, new { @class = "navbar-brand"})
+                @Html.ActionLink("Register", "Register", "Account", new { area = ""}, new { @class = "navbar-brand"})
+                @Html.ActionLink("Login", "LogOn", "Account", new { area = ""}, new { @class = "navbar-brand"})
+                @Html.ActionLink("Donate", "Index", "Donate", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Get Help", "", "", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Locations", "", "", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Contact Us", "Contact", "ContactUs", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
