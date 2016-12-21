@@ -11,8 +11,30 @@ namespace HelpingHands.Controllers
         // GET: Donate
         public ActionResult Index()
         {
+            ViewBag.PageHeading = "THANKS FOR YOUR GENEROSITY!";
+            ViewBag.GiveHeading = "Give Now:";
+            ViewBag.DonorSignIn = "Already a donor? Sign in here:";
+            ViewBag.Categories = new string[]
+            {
+                "Time: (For more info or to speak w/ someone directly about volunteering, ContactUs",
+                "Food:",
+                "Clothes:",
+                "Money:"
+            };
+
             return View();
             //return "Hello Donors!"
+        }
+
+        
+        public ActionResult GiveTime()
+        {
+            ViewBag.Time = new string[]
+
+            {
+
+            };
+            return View();
         }
     }
 }
