@@ -1,0 +1,15 @@
+﻿@model HelpingHands.Data.LocationsRepository
+
+@{
+    ViewBag.Title = "Testing";
+}
+
+<h2>Testing</h2>
+
+<select id="Select1">
+    @for (int i = 0; i < Model.GetLocations.Length; i++)
+    {
+        <option>@Model.GetLocations</option>
+    }    
+</select>
+

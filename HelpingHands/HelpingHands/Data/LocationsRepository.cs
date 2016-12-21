@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using HelpingHands.Models;
+//using HelpingHands.Data;
 
 namespace HelpingHands.Data
 {
@@ -60,11 +61,13 @@ namespace HelpingHands.Data
             },
         };
 
-       public Locations GetLocations(int id)
-        {
-            Locations myLocations = null;
-
-            return myLocations;
+       public Locations[] GetLocations
+        { 
+            get
+            {
+                
+               return myLocations;
+            }
         }
     }
 }
