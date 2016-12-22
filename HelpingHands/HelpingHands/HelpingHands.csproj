@@ -142,6 +142,7 @@
     <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
     <Content Include="Views\Test\Testing.cshtml" />
     <Content Include="Views\ContactUs\Contact.cshtml" />
+    <Content Include="Views\Donate\GiveNow.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
