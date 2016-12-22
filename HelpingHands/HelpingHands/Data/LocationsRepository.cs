@@ -64,8 +64,7 @@ namespace HelpingHands.Data
        public Locations[] GetLocations
         { 
             get
-            {
-                
+            {                
                return myLocations;
             }
         }

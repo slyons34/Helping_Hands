@@ -12,6 +12,8 @@ namespace HelpingHands.Controllers
 {
     public class AccountController : Controller
     {
+        HelpingHandsEntities HelpingHandsDb = new HelpingHandsEntities();
+
         //I will need something similar to carry the user through the Web
 
         //private void MigrateShoppingCart(string UserName)
@@ -85,25 +87,17 @@ namespace HelpingHands.Controllers
         // POST: /Account/Register
 
         [HttpPost]
-        public ActionResult Register(RegisterModel model)
+        public ActionResult Register(User model)
         {
             if (ModelState.IsValid)
             {
                 // Attempt to register the user
-                MembershipCreateStatus createStatus;
-                Membership.CreateUser(model.UserName, model.Password, model.Email, "question", "answer", true, null, out createStatus);
-
-                if (createStatus == MembershipCreateStatus.Success)
-                {
-                    //MigrateShoppingCart(model.UserName);
-
-                    FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
-                    return RedirectToAction("Index", "Home");
-                }
-                else
-                {
-                    ModelState.AddModelError("", ErrorCodeToString(createStatus));
-                }
+                
+                //MigrateShoppingCart(model.UserName);
+                HelpingHandsDb.Users.Add(model);
+                HelpingHandsDb.SaveChanges();
+                FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
+                return RedirectToAction("Index", "Home");               
             }
 
             // If we got this far, something failed, redisplay form
