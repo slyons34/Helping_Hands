@@ -5,9 +5,8 @@
 
 <h1>@ViewBag.PageHeading</h1>
   
-  <h5 textalign: center>@ViewBag.DonorSignIn <br />
-        <input id="EMAIL" type="email" placeholder="Username" /><br />
-        <input id="Password1" type="password" placeholder="Password" /><input id="Submit1" type="submit" value="submit" /> </h5> 
+<h5 textalign: center>@ViewBag.DonorSignIn<br />@Html.ActionLink("Login", "LogOn", "Account", new { area = "" }, new { @class = "navbar-brand" })</h5>
+<br />
 
 
 

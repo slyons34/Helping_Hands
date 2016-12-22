@@ -13,7 +13,7 @@ namespace HelpingHands.Controllers
         {
             ViewBag.PageHeading = "THANKS FOR YOUR GENEROSITY!";
             ViewBag.GiveHeading = "Give Now:";
-            ViewBag.DonorSignIn = "Already a donor? Sign in here:";
+            ViewBag.DonorSignIn = "Already a donor?";
             ViewBag.Categories = new string[]
             {
                 "Time: (For more info or to speak w/ someone directly about volunteering, ContactUs",
