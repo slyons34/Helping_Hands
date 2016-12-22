@@ -22,6 +22,8 @@
             }
         </select>
 
+        @*@if (myLocations.Length > 0)
+        {*@
         <h4>Choose Location or ContactUs to schedule a pick-up.</h4>
         <select id="Select1">
             @*@foreach (var location in MyLocations)
@@ -29,7 +31,8 @@
 
                 }*@
             <option></option>
-
+        @*}*@
+           
         </select>
         <h4>When? Enter date and time:</h4>
         <input id="Text1" type="text" />
