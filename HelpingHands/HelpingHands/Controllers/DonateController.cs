@@ -29,7 +29,15 @@ namespace HelpingHands.Controllers
 
         public ActionResult GiveNow()
             {
-                return View();
+
+            ViewBag.PaymentType = new string[]
+                  {
+                        "Choose an option from below",
+                        "Credit/Debit Card",
+                        "Check",
+                        "PayPal",
+                  };
+            return View();
             }
 
 
