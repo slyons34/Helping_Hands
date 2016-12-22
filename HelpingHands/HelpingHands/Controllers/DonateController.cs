@@ -26,7 +26,13 @@ namespace HelpingHands.Controllers
             //return "Hello Donors!"
         }
 
-        
+
+        public ActionResult GiveNow()
+            {
+                return View();
+            }
+
+
         //public ActionResult GiveTime()
         //{
         //    ViewBag.Time = new string[]
