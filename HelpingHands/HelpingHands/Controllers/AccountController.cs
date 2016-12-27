@@ -5,13 +5,17 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
+using System.Net;
+using System.Net.Mail;
 using HelpingHands.Models;
-
+using System.Threading.Tasks;
 
 namespace HelpingHands.Controllers
 {
     public class AccountController : Controller
     {
+        HelpingHandsEntities HelpingHandsDb = new HelpingHandsEntities();
+
         //I will need something similar to carry the user through the Web
 
         //private void MigrateShoppingCart(string UserName)
@@ -37,25 +41,35 @@ namespace HelpingHands.Controllers
         public ActionResult LogOn(LogOnModel model, string returnUrl)
         {
             if (ModelState.IsValid)
-            {
-                if (Membership.ValidateUser(model.UserName, model.Password))
-                {
-                    //MigrateShoppingCart(model.UserName);
+            {                
 
-                    FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
-                    if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
-                        && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
+                User user = HelpingHandsDb.GetUser(model.UserName);
+
+                if (user != null) 
+                {
+                    if (user.Password.Equals(model.Password))
                     {
-                        return Redirect(returnUrl);
+
+                        FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
+
+                        if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
+                            && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
+                        {
+                            return Redirect(returnUrl);
+                        }
+                        else
+                        {
+                            return RedirectToAction("Index", "Home");
+                        }
                     }
                     else
                     {
-                        return RedirectToAction("Index", "Home");
+                        ModelState.AddModelError("", "The password provided is incorrect.");
                     }
                 }
                 else
                 {
-                    ModelState.AddModelError("", "The user name or password provided is incorrect.");
+                    ModelState.AddModelError("", "The user name provided is incorrect.");
                 }
             }
 
@@ -85,24 +99,23 @@ namespace HelpingHands.Controllers
         // POST: /Account/Register
 
         [HttpPost]
-        public ActionResult Register(RegisterModel model)
+        public ActionResult Register(User model)
         {
             if (ModelState.IsValid)
             {
-                // Attempt to register the user
-                MembershipCreateStatus createStatus;
-                Membership.CreateUser(model.UserName, model.Password, model.Email, "question", "answer", true, null, out createStatus);
-
-                if (createStatus == MembershipCreateStatus.Success)
+                if (HelpingHandsDb.Users.Count(u => u.UserName == model.UserName) == 0)
                 {
-                    //MigrateShoppingCart(model.UserName);
-
+                    // Attempt to register the user, and creates a table in case it's not there
+                    
+                    HelpingHandsDb.Users.Add(model);
+                    HelpingHandsDb.SaveChanges();
                     FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
                     return RedirectToAction("Index", "Home");
                 }
                 else
-                {
-                    ModelState.AddModelError("", ErrorCodeToString(createStatus));
+                {                    
+                    ModelState.AddModelError(string.Empty, "User already exist");
+                    return View();
                 }
             }
 
@@ -110,10 +123,79 @@ namespace HelpingHands.Controllers
             return View(model);
         }
 
+        //GET: /Account/ForgotPassword
+
+        // [Authorize]
+        public ActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        // [Authorize]
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public async Task<ActionResult> ForgotPassword(ForgotPasswordModel model)
+        {
+            if (ModelState.IsValid)
+            {
+
+                User user = HelpingHandsDb.GetUser(model.UserName);
+
+                if (user != null)
+                {
+                    var password = model.UserName + user.Id;
+                    user.Password = password;
+                    user.ConfirmPassword = password;
+                    HelpingHandsDb.SaveChanges();
+                    ////
+                    await SendEmail(model, user, password);
+                    return RedirectToAction("Sent");
+                    ////
+                }
+                else
+                {
+                    ModelState.AddModelError("", "The user name provided is incorrect.");
+                }
+            }
+            // If we got this far, something failed, redisplay form
+            return View(model);
+
+        }
+
+        private async Task SendEmail(ForgotPasswordModel model, User user, string password)
+        {
+            var bodyTemplate = "<p>User Name: {0} <p>{1}</p>";
+            var message = new MailMessage();
+            message.To.Add(new MailAddress(user.Email));  // replace with valid value 
+            message.From = new MailAddress("TeamHelpingHands5@gmail.com");  // replace with valid value
+            message.Subject = "Your new pasword";
+            message.Body = string.Format(bodyTemplate, model.UserName, "Your new password is: " + password);
+            message.IsBodyHtml = true;
+
+            using (var smtp = new SmtpClient())
+            {
+                var credential = new NetworkCredential
+                {
+                    UserName = "teamhelpinghands5@gmail.com",  // replace with valid value
+                    Password = "helpinghands2016"  // replace with valid value
+                };
+                smtp.Credentials = credential;
+                smtp.Host = "smtp.gmail.com";
+                smtp.Port = 587;
+                smtp.EnableSsl = true;
+                await smtp.SendMailAsync(message);                
+            }
+        }
+
+        public ActionResult Sent()
+        {
+            return View();
+        }
+
         //
         // GET: /Account/ChangePassword
 
-        [Authorize]
+        // [Authorize]
         public ActionResult ChangePassword()
         {
             return View();
@@ -122,34 +204,32 @@ namespace HelpingHands.Controllers
         //
         // POST: /Account/ChangePassword
 
-       // [Authorize]
+        [Authorize]
         [HttpPost]
         public ActionResult ChangePassword(ChangePasswordModel model)
         {
             if (ModelState.IsValid)
-            {
-
-                // ChangePassword will throw an exception rather
-                // than return false in certain failure scenarios.
-                bool changePasswordSucceeded;
-                try
-                {
-                    MembershipUser currentUser = Membership.GetUser(User.Identity.Name, true /* userIsOnline */);
-                    changePasswordSucceeded = currentUser.ChangePassword(model.OldPassword, model.NewPassword);
-                }
-                catch (Exception)
-                {
-                    changePasswordSucceeded = false;
-                }
-
-                if (changePasswordSucceeded)
-                {
-                    return RedirectToAction("ChangePasswordSuccess");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "The current password is incorrect or the new password is invalid.");
-                }
+            {                
+                string CurrentUser = User.Identity.Name.ToString();                
+                User user = HelpingHandsDb.GetUser(CurrentUser);
+                  if (user != null)
+                  {
+                      if (user.Password == model.OldPassword)
+                      {
+                          user.Password = model.NewPassword;
+                          user.ConfirmPassword = model.ConfirmPassword;
+                          HelpingHandsDb.SaveChanges();
+                          return RedirectToAction("ChangePasswordSuccess");
+                    }
+                      else
+                      {
+                          ModelState.AddModelError("", "The current password is incorrect.");
+                      }
+                  }
+                  else
+                  {
+                      ModelState.AddModelError("", "For some straing reson, user is not in table. This is imposible in this point ");
+                  }
             }
 
             // If we got this far, something failed, redisplay form
@@ -163,6 +243,7 @@ namespace HelpingHands.Controllers
         {
             return View();
         }
+        
 
         #region Status Codes
         private static string ErrorCodeToString(MembershipCreateStatus createStatus)

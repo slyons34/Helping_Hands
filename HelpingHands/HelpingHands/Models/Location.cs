@@ -5,7 +5,7 @@ using System.Web;
 
 namespace HelpingHands.Models
 {
-    public class Locations
+    public class Location
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -16,6 +16,5 @@ namespace HelpingHands.Models
         public string State { get; set; }
         public string ZipCode { get; set; }
         public string Hours { get; set; }
-
     }
 }
