@@ -112,7 +112,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ContactUsController.cs" />
     <Compile Include="Controllers\DonateController.cs" />
+<<<<<<< HEAD
     <Compile Include="Controllers\GetHelpController.cs" />
+=======
+>>>>>>> refs/remotes/origin/master
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\TestController.cs" />
@@ -143,7 +146,11 @@
     <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
     <Content Include="Views\Test\Testing.cshtml" />
     <Content Include="Views\ContactUs\Contact.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\CheckLocation\Index.cshtml" />
+=======
+    <Content Include="Views\Donate\GiveNow.cshtml" />
+>>>>>>> refs/remotes/origin/master
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

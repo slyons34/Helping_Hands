@@ -13,7 +13,11 @@ namespace HelpingHands.Controllers
         {
             ViewBag.PageHeading = "THANKS FOR YOUR GENEROSITY!";
             ViewBag.GiveHeading = "Give Now:";
+<<<<<<< HEAD
             ViewBag.DonorSignIn = "Already a donor? Sign in here:";
+=======
+            ViewBag.DonorSignIn = "Already a donor?";
+>>>>>>> refs/remotes/origin/master
             ViewBag.Categories = new string[]
             {
                 "Time: (For more info or to speak w/ someone directly about volunteering, ContactUs",
@@ -26,7 +30,17 @@ namespace HelpingHands.Controllers
             //return "Hello Donors!"
         }
 
+<<<<<<< HEAD
         
+=======
+
+        public ActionResult GiveNow()
+            {
+                return View();
+            }
+
+
+>>>>>>> refs/remotes/origin/master
         //public ActionResult GiveTime()
         //{
         //    ViewBag.Time = new string[]
