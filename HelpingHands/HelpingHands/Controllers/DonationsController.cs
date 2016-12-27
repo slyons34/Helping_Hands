@@ -20,8 +20,7 @@ namespace HelpingHands.Controllers
         // GET: Donations/Details/5
         public ActionResult Details(int id)
         {
-            Donation donation = HelpingHandsDb.Donations.Find(id);
-                      
+            Donation donation = HelpingHandsDb.Donations.Find(id);                      
             return View(donation);
         }
 
