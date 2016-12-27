@@ -8,33 +8,33 @@ namespace HelpingHands.Data
 {
     public class CategoriesRepository
     {
-        private static Category[] myCategories = new Category[]
+        private static Categories[] myCategories = new Categories[]
         {
-            new Category()
+            new Categories() //
             {
                 Id = 1,
                 Description = "VolunteerTime"
             },
-            new Category()
+            new Categories()
             {
                 Id = 2,
                 Description = "Food"
             },
-            new Category()
+            new Categories()
             {
                 Id = 3,
                 Description = "Money"
             },
-            new Category()
+            new Categories()
             {
                 Id = 4,
                 Description = "Clothes"
             }
         };
 
-        public Category GetCategories(int id)
+        public Categories GetCategories(int id)
         {
-            Category myCategories = null;
+            Categories myCategories = null;
 
             return myCategories;
         }
