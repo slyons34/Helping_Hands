@@ -10,7 +10,7 @@ namespace HelpingHands.Data
     {
         private static Categories[] myCategories = new Categories[]
         {
-            new Categories()
+            new Categories() //
             {
                 Id = 1,
                 Description = "VolunteerTime"
