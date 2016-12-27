@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using HelpingHands.Models;
+//using HelpingHands.Data;
 
 namespace HelpingHands.Data
 {
     public class LocationsRepository
     {
-        private static Locations[] myLocations = new Locations[]
+        private static Location[] myLocations = new Location[]
         {
-            new Locations()
+            new Location()
             {
                 Id = 1,
                 Name = "Greater Cleveland Food Bank",
@@ -22,7 +23,7 @@ namespace HelpingHands.Data
                 Phone = "216-738-2265",
                 Hours = "8:30am - 4:00 pm"
             },
-            new Locations()
+            new Location()
             {
                 Id = 2,
                 Name = "Parma Christian Church Diciples of Christ",
@@ -34,7 +35,7 @@ namespace HelpingHands.Data
                 Phone = "440-842-1614",
                 Hours = "9:00am - 1:00 pm"
             },
-            new Locations()
+            new Location()
             {
                 Id = 3,
                 Name = "Kosher Food Bank",
@@ -46,7 +47,7 @@ namespace HelpingHands.Data
                 Phone = "216-382-7202",
                 Hours = ""
             },
-            new Locations()
+            new Location()
             {
                 Id = 4,
                 Name = "Huger Network of Grater Cleveland",
@@ -60,11 +61,12 @@ namespace HelpingHands.Data
             },
         };
 
-       public Locations GetLocations(int id)
-        {
-            Locations myLocations = null;
-
-            return myLocations;
+       public Location[] GetLocations
+        { 
+            get
+            {                
+               return myLocations;
+            }
         }
     }
 }
