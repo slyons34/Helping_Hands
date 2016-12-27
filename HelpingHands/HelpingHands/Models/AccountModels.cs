@@ -9,6 +9,13 @@ using System.Web.Security;
 namespace HelpingHands.Models
 {
 
+    public class ForgotPasswordModel
+    {
+        [Required]
+        [Display(Name = "User name")]
+        public string UserName { get; set; }
+    }
+
     public class ChangePasswordModel
     {
         [Required]
@@ -24,7 +31,7 @@ namespace HelpingHands.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm new password")]
-        ///added the fully name space
+        ///added the fully name space        
         [System.ComponentModel.DataAnnotations.Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }

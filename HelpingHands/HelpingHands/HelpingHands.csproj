@@ -104,6 +104,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -120,7 +121,9 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ContactUsController.cs" />
     <Compile Include="Controllers\DonateController.cs" />
+    <Compile Include="Controllers\DonationsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\TestController.cs" />
@@ -129,10 +132,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612221318555_InitialCreate.cs" />
+    <Compile Include="Migrations\201612221318555_InitialCreate.Designer.cs">
+      <DependentUpon>201612221318555_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612270207176_Donations.cs" />
+    <Compile Include="Migrations\201612270207176_Donations.Designer.cs">
+      <DependentUpon>201612270207176_Donations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\Categories.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Donation.cs" />
     <Compile Include="Models\HelpingHandsEntities.cs" />
-    <Compile Include="Models\Locations.cs" />
+    <Compile Include="Models\Location.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +164,11 @@
     <Content Include="Views\Account\ChangePassword.cshtml" />
     <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
     <Content Include="Views\Test\Testing.cshtml" />
+    <Content Include="Views\ContactUs\Contact.cshtml" />
+    <Content Include="Views\Donate\GiveNow.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\Sent.cshtml" />
+    <Content Include="Views\Donations\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -160,6 +178,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201612221318555_InitialCreate.resx">
+      <DependentUpon>201612221318555_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612270207176_Donations.resx">
+      <DependentUpon>201612270207176_Donations.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
