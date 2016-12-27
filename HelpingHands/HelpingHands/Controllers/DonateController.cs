@@ -21,6 +21,14 @@ namespace HelpingHands.Controllers
                 "Clothes:",
                 "Money:"
             };
+            ViewBag.Locations = new string[]
+            {
+                "Greater Cleveland Food Bank",
+                "Parma Christian Church Disciples of Christ",
+                "Kosher Food Bank",
+                "Hunger Network of Greater Cleveland",
+
+            };
 
             return View();
             //return "Hello Donors!"

@@ -20,18 +20,22 @@
             {
                 <option> @category</option>
             }
-        </select>
 
-        @*@if (myLocations.Length > 0)
-        {*@
+        </select>
+        </div>
+}
+
+        @if (ViewBag.Locations.Length > 0)
+        {
         <h4>Choose Location or ContactUs to schedule a pick-up.</h4>
         <select id="Select1">
-            @*@foreach (var location in MyLocations)
-                {
-
-                }*@
-            <option></option>
-        @*}*@
+            @foreach (var location in ViewBag.Locations)
+            {
+                <option>@location</option>
+            }
+            
+        }
+            
            
         </select>
         <h4>When? Enter date and time:</h4>
@@ -67,7 +71,7 @@
            Phone: 216.525.1964
         </p>
 
-    </div>
+    
 }
 
 
