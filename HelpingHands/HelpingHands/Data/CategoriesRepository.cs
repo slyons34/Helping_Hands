@@ -12,22 +12,22 @@ namespace HelpingHands.Data
         {
             new Category() //
             {
-                Id = 1,
+                CatId = 1,
                 Description = "VolunteerTime"
             },
             new Category()
             {
-                Id = 2,
+                CatId = 2,
                 Description = "Food"
             },
             new Category()
             {
-                Id = 3,
+                CatId = 3,
                 Description = "Money"
             },
             new Category()
             {
-                Id = 4,
+                CatId = 4,
                 Description = "Clothes"
             }
         };

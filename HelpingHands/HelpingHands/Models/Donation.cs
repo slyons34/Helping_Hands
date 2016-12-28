@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
+using System.Web.Mvc;
 
 namespace HelpingHands.Models
 {
@@ -19,9 +20,11 @@ namespace HelpingHands.Models
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+        public int CatId { get; set; }
+        public int LocId { get; set; }
         public string UserName { get; set; }
-        public Location Location { get; set; }
-        public Category Item { get; set; }
+        public virtual Location Location { get; set; }
+        public virtual  Category Item { get; set; }
         public string Quantity { get; set; }
         public string DateTime { get; set; }
        
