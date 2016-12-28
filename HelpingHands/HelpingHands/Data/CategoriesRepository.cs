@@ -34,7 +34,7 @@ namespace HelpingHands.Data
             }
         };
 
-        public Category GetCategories(int id)
+        public Category GetCategories(int Catid)
         {
             Category myCategories = null;
 

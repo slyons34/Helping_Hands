@@ -63,9 +63,9 @@ namespace HelpingHands.Data
             },
         };
 
-       public Location[] GetLocations
-        { 
-            get
+       public Location GetLocations(int LocId)
+        {
+            Location myLocations = null;
             {                
                return myLocations;
             }
