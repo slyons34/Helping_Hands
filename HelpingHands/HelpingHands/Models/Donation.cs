@@ -13,10 +13,11 @@ namespace HelpingHands.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string UserName { get; set; }
+        public string Location { get; set; }
         public string Item { get; set; }
         public string Quantity { get; set; }
         public string DateTime { get; set; }
-        public string Location { get; set; }
+        
         public string Description { get; set; }        
     }
 }
