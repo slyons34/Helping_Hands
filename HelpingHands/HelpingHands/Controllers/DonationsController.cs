@@ -46,7 +46,7 @@ namespace HelpingHands.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,UserName,Quantity,DateTime,Description")] Donation donation)
+        public ActionResult Create([Bind(Include = "Id,UserName,Location,Item,Description,Quantity,DateTime")] Donation donation)
         {
             if (ModelState.IsValid)
             {
