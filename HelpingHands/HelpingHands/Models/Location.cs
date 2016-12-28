@@ -7,7 +7,7 @@ namespace HelpingHands.Models
 {
     public class Location
     {
-        public int Id { get; set; }
+        public int LocId { get; set; }
         public string Name { get; set; }
         public string Adress1 { get; set; }
         public string Adress2 { get; set; }
