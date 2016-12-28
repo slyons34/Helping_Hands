@@ -26,7 +26,7 @@ namespace HelpingHands.Data
             new Location()
             {
                 LocId = 2,
-                Name = "Parma Christian Church Diciples of Christ",
+                Name = "Parma Christian Church Disciples of Christ",
                 Adress1 = "7000 Ridge Rd.",
                 Adress2 = "",
                 City = "Cleveland",
@@ -50,9 +50,9 @@ namespace HelpingHands.Data
             new Location()
             {
                 LocId = 4,
-                Name = "Huger Network of Grater Cleveland",
-                Adress1 = "614 West Superior Av.",
-                Adress2 = "Suit 744",
+                Name = "Hunger Network of Greater Cleveland",
+                Adress1 = "614 West Superior Ave.",
+                Adress2 = "Suite 744",
                 City = "Cleveland",
                 State = "OH",
                 ZipCode = "44113",
