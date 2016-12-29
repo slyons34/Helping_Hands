@@ -17,11 +17,11 @@ namespace HelpingHands.Controllers
         }
 
         // GET: Test
-        public ActionResult Testing()
-        {
-            var repository = _locationsRepository.GetLocations;            
+        //public ActionResult Testing()
+        //{
+        //    //var repository = _locationsRepository.GetLocations;            
 
-            return View(repository);
-        }
+        //    //return View(repository);
+        //}
     }
 }
