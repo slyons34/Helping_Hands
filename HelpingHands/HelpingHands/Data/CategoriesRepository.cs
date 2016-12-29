@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using HelpingHands.Models;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HelpingHands.Data
 {
@@ -12,27 +14,27 @@ namespace HelpingHands.Data
         {
             new Category() //
             {
-                Id = 1,
+                CategoryId = 1,
                 Description = "VolunteerTime"
             },
             new Category()
             {
-                Id = 2,
+                CategoryId = 2,
                 Description = "Food"
             },
             new Category()
             {
-                Id = 3,
+                CategoryId = 3,
                 Description = "Money"
             },
             new Category()
             {
-                Id = 4,
+                CategoryId = 4,
                 Description = "Clothes"
             }
         };
 
-        public Category GetCategories(int id)
+        public Category GetCategories(int Catid)
         {
             Category myCategories = null;
 

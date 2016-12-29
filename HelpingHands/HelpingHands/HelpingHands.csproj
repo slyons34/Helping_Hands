@@ -125,6 +125,7 @@
     <Compile Include="Controllers\ContactUsController.cs" />
     <Compile Include="Controllers\DonateController.cs" />
     <Compile Include="Controllers\DonationsController.cs" />
+    <Compile Include="Controllers\GetHelp\GetHelpController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocationsController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -134,14 +135,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201612221318555_InitialCreate.cs" />
-    <Compile Include="Migrations\201612221318555_InitialCreate.Designer.cs">
-      <DependentUpon>201612221318555_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612270207176_Donations.cs" />
-    <Compile Include="Migrations\201612270207176_Donations.Designer.cs">
-      <DependentUpon>201612270207176_Donations.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Migrations\InitializeDB.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -170,8 +164,6 @@
     <Content Include="Views\Donate\GiveNow.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\Sent.cshtml" />
-    <Content Include="Views\Donations\Index.cshtml" />
-    <Content Include="Views\Donations\Details.cshtml" />
     <Content Include="Views\Categories\Create.cshtml" />
     <Content Include="Views\Categories\Delete.cshtml" />
     <Content Include="Views\Categories\Details.cshtml" />
@@ -182,6 +174,13 @@
     <Content Include="Views\Locations\Details.cshtml" />
     <Content Include="Views\Locations\Edit.cshtml" />
     <Content Include="Views\Locations\Index.cshtml" />
+    <Content Include="Views\Donations\Create.cshtml" />
+    <Content Include="Views\Donations\Delete.cshtml" />
+    <Content Include="Views\Donations\Details.cshtml" />
+    <Content Include="Views\Donations\Edit.cshtml" />
+    <Content Include="Views\Donations\Index.cshtml" />
+    <Content Include="Views\GetHelp\Index.cshtml" />
+    <Content Include="Views\GetHelp\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -191,14 +190,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201612221318555_InitialCreate.resx">
-      <DependentUpon>201612221318555_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612270207176_Donations.resx">
-      <DependentUpon>201612270207176_Donations.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
