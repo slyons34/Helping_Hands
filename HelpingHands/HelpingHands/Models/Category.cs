@@ -11,7 +11,11 @@ namespace HelpingHands.Models
     {
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
-        public int CatId { get; set; }
+        public int CategoryId { get; set; }
+
+        [Required(ErrorMessage = "Item is required")]
+        [Display(Name = "Item")]
         public string Description { get; set; }
     }
+
 }

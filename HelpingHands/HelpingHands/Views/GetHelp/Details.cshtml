@@ -1,0 +1,104 @@
+﻿@model HelpingHands.Models.Donation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Donation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>        
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location.Address1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location.Address1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location.Address2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location.Address2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location.State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location.State)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Location.ZipCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location.ZipCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location.Hours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location.Hours)
+        </dd>
+
+    </dl>
+</div>
+<p>    
+    @Html.ActionLink("Back to List", "Index")
+</p>

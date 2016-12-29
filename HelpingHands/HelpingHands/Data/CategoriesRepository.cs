@@ -14,27 +14,27 @@ namespace HelpingHands.Data
         {
             new Category() //
             {
-                CatId = 1,
+                CategoryId = 1,
                 Description = "VolunteerTime"
             },
             new Category()
             {
-                CatId = 2,
+                CategoryId = 2,
                 Description = "Food"
             },
             new Category()
             {
-                CatId = 3,
+                CategoryId = 3,
                 Description = "Money"
             },
             new Category()
             {
-                CatId = 4,
+                CategoryId = 4,
                 Description = "Clothes"
             }
         };
 
-        public Category GetCategories(int id)
+        public Category GetCategories(int Catid)
         {
             Category myCategories = null;
 
