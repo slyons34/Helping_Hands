@@ -13,10 +13,10 @@ namespace HelpingHands.Data
         {
             new Location()
             {
-                LocId = 1,
+                LocationId = 1,
                 Name = "Greater Cleveland Food Bank",
-                Adress1 = "15500 South Waterloo Rd.",
-                Adress2 = "",
+                Address1 = "15500 South Waterloo Rd.",
+                Address2 = "",
                 City = "Cleveland",
                 State = "OH",
                 ZipCode = "44110",
@@ -25,10 +25,10 @@ namespace HelpingHands.Data
             },
             new Location()
             {
-                LocId = 2,
+                LocationId = 2,
                 Name = "Parma Christian Church Disciples of Christ",
-                Adress1 = "7000 Ridge Rd.",
-                Adress2 = "",
+                Address1 = "7000 Ridge Rd.",
+                Address2 = "",
                 City = "Cleveland",
                 State = "OH",
                 ZipCode = "44129",
@@ -37,10 +37,10 @@ namespace HelpingHands.Data
             },
             new Location()
             {
-                LocId = 3,
+                LocationId = 3,
                 Name = "Kosher Food Bank",
-                Adress1 = "2004 S Green Rd.",
-                Adress2 = "",
+                Address1 = "2004 S Green Rd.",
+                Address2 = "",
                 City = "Cleveland",
                 State = "OH",
                 ZipCode = "44121",
@@ -49,10 +49,10 @@ namespace HelpingHands.Data
             },
             new Location()
             {
-                LocId = 4,
+                LocationId = 4,
                 Name = "Hunger Network of Greater Cleveland",
-                Adress1 = "614 West Superior Ave.",
-                Adress2 = "Suite 744",
+                Address1 = "614 West Superior Ave.",
+                Address2 = "Suite 744",
                 City = "Cleveland",
                 State = "OH",
                 ZipCode = "44113",
