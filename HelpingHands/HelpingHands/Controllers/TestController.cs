@@ -19,9 +19,9 @@ namespace HelpingHands.Controllers
         // GET: Test
         public ActionResult Testing()
         {
-            var repositoy = _locationsRepository.GetLocations;            
+            var repository = _locationsRepository.GetLocations;            
 
-            return View(repositoy);
+            return View(repository);
         }
     }
 }

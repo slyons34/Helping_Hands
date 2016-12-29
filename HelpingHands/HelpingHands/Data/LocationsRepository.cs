@@ -63,7 +63,7 @@ namespace HelpingHands.Data
             },
         };
 
-       public Location GetLocations(int LocId)
+       public Location GetLocations()
         {
             Location myLocations = null;
             {                
