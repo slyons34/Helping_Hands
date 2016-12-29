@@ -46,7 +46,7 @@ namespace HelpingHands.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Adress1,Adress2,Phone,City,State,ZipCode,Hours")] Location location)
+        public ActionResult Create([Bind(Include = "LocationId,Name,Address1,Address2,Phone,City,State,ZipCode,Hours")] Location location)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace HelpingHands.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Adress1,Adress2,Phone,City,State,ZipCode,Hours")] Location location)
+        public ActionResult Edit([Bind(Include = "LocationId,Name,Address1,Address2,Phone,City,State,ZipCode,Hours")] Location location)
         {
             if (ModelState.IsValid)
             {

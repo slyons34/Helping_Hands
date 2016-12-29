@@ -17,30 +17,50 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("GIVE-N-NEED", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Register", "Register", "Account", new { area = ""}, new { @class = "navbar-brand"})
-                @Html.ActionLink("Login", "LogOn", "Account", new { area = ""}, new { @class = "navbar-brand"})
-                @Html.ActionLink("Donate", "Index", "Donate", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Get Help", "", "", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Locations", "", "", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Contact Us", "Contact", "ContactUs", new { area = "" }, new { @class = "navbar-brand" })
+
             </div>
+
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                </ul>
-            </div>
+                   <li> @Html.ActionLink("GIVE-N-NEED", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
+                    <li>@Html.ActionLink("Donate", "Index", "Donations", new { area = "" }, new { @class = "navbar-brand" })</li>
+                    <li>@Html.ActionLink("Get Help", "Index", "GetHelp", new { area = "" }, new { @class = "navbar-brand" })</li>
+                    <li>@Html.ActionLink("Locations", "Index", "Locations", new { area = "" }, new { @class = "navbar-brand" })</li>
+                    <li>@Html.ActionLink("Categories", "Index", "Categories", new { area = "" }, new { @class = "navbar-brand" })</li>
+                    <li>@Html.ActionLink("Contact Us", "Contact", "ContactUs", new { area = "" }, new { @class = "navbar-brand" })</li>                    
+                    
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Welcome @User.Identity.Name
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>@Html.ActionLink("Change Password", "ChangePassword", "Account", new { area = "" }, new { @class = "navbar-brand" })</li>
+                                    <li>@Html.ActionLink("LogOff", "LogOff", "Account", new { area = "" }, new { @class = "navbar-brand" })</li>                                    
+                                </ul>
+                            </li>
+                        }
+                        else
+                        {
+                            <li>@Html.ActionLink("Register", "Register", "Account", new { area = "" }, new { @class = "navbar-brand" })</li>
+                            <li>@Html.ActionLink("LogIn", "LogOn", "Account", new { area = "" }, new { @class = "navbar-brand" })</li>
+                        }
+                    
+            </ul>
         </div>
     </div>
+</div>
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Helping Hands - Give-N-Need Application</p>
-        </footer>
-    </div>
+<div class="container body-content">
+    @RenderBody()
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Helping Hands - Give-N-Need Application</p>
+    </footer>
+</div>
 
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>

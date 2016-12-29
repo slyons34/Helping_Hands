@@ -15,9 +15,17 @@ namespace HelpingHands.Controllers
         private HelpingHandsEntities db = new HelpingHandsEntities();
 
         // GET: Donations
+        [Authorize]
         public ActionResult Index()
         {
-            return View(db.Donations.ToList());
+            var userName = User.Identity.Name;
+
+            //Donation donations = (from d in db.Donations.Include(d => d.Category).Include(d => d.Location)
+            //where d.UserName.Equals(userName) select d).FirstOrDefault();
+            //return View(donations);
+
+            var donations = db.Donations.Include(d => d.Category).Include(d => d.Location);            
+            return View(donations.ToList());
         }
 
         // GET: Donations/Details/5
@@ -38,6 +46,8 @@ namespace HelpingHands.Controllers
         // GET: Donations/Create
         public ActionResult Create()
         {
+            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Description");
+            ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Name");
             return View();
         }
 
@@ -46,7 +56,7 @@ namespace HelpingHands.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,UserName,Location,Item,Description,Quantity,DateTime")] Donation donation)
+        public ActionResult Create([Bind(Include = "Id,CategoryId,LocationId,UserName,Quantity,DateTime,Description")] Donation donation)
         {
             if (ModelState.IsValid)
             {
@@ -55,6 +65,8 @@ namespace HelpingHands.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Description", donation.CategoryId);
+            ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Name", donation.LocationId);
             return View(donation);
         }
 
@@ -70,6 +82,8 @@ namespace HelpingHands.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Description", donation.CategoryId);
+            ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Name", donation.LocationId);
             return View(donation);
         }
 
@@ -78,7 +92,7 @@ namespace HelpingHands.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,UserName,Quantity,DateTime,Description")] Donation donation)
+        public ActionResult Edit([Bind(Include = "Id,CategoryId,LocationId,UserName,Quantity,DateTime,Description")] Donation donation)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +100,8 @@ namespace HelpingHands.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Description", donation.CategoryId);
+            ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Name", donation.LocationId);
             return View(donation);
         }
 

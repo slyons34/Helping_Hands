@@ -4,12 +4,13 @@ namespace HelpingHands.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using Models;
 
     internal sealed class Configuration : DbMigrationsConfiguration<HelpingHands.Models.HelpingHandsEntities>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
             ContextKey = "HelpingHands.Models.HelpingHandsEntities";
         }
 
@@ -27,6 +28,16 @@ namespace HelpingHands.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+            /*
+            context.Categories.AddOrUpdate(p => p.Description,
+                        new Category { Description= "category1" },
+                        new Category { Description = "category2" },
+                        new Category { Description = "category3" },
+                        new Category { Description = "category1" }
+                        );
+            context.SaveChanges();
+            */
+
         }
     }
 }

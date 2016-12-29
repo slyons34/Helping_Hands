@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.Mvc;
+using System.ComponentModel;
 
 namespace HelpingHands.Models
 {
@@ -17,15 +18,24 @@ namespace HelpingHands.Models
                 UserName = "anonymous";
             else UserName = HttpContext.Current.User.Identity.Name;
         }
+
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public int CatId { get; set; }
-        public int LocId { get; set; }
-        public string UserName { get; set; }
+
+        [DisplayName("Category")]
+        public int CategoryId { get; set; }
+        public virtual Category Category { get; set; }
+
+        [DisplayName("Location")]
+        public int LocationId { get; set; }
         public virtual Location Location { get; set; }
-        public virtual  Category Item { get; set; }
+
+        [ScaffoldColumn(false)]
+        public string UserName { get; set; }
+                
         public string Quantity { get; set; }
+
         public string DateTime { get; set; }
        
         public string Description { get; set; }        
