@@ -78,10 +78,10 @@ namespace HelpingHands.Migrations
             context.Users.Add(new User
             {
                 Id = 1,
-                UserName = "mcmejorado",
-                Email = "lluvia_dgo@yahoo.com",
-                Password = "mcmejorado",
-                ConfirmPassword = "mcmejorado",
+                UserName = "AnthonyH",
+                Email = "stoneah@yahoo.com",
+                Password = "amh12345",
+                ConfirmPassword = "amh12345",
                 Role = "admin",                
             });
             context.SaveChanges();
