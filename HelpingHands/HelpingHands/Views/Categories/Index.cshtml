@@ -11,25 +11,45 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CategoryId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CategoryId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CategoryId })
-        </td>
-    </tr>
-}
+<table class="table table-striped">
+    <thead style="background-color:#178acc;color:white">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    <!--   @Html.ActionLink("Edit", "Edit", new { id=item.CategoryId }) -->
+                    <a href='@Url.Action("Edit", "Categories", new { id = item.CategoryId })'>
+                        <span class="glyphicon glyphicon-pencil" title="Edit" />
+                    </a>
+                    |
+
+                    <!--    @Html.ActionLink("Details", "Details", new { id=item.CategoryId }) -->                    
+                    <a href='@Url.Action("Details", "Categories", new { id = item.CategoryId })'>
+                        <span class="glyphicon glyphicon-list-alt" title="Detail" />
+                    </a>
+                    |
+
+                    <!--     @Html.ActionLink("Delete", "Delete", new { id=item.CategoryId }) -->
+                    <a href='@Url.Action("Delete", "Categories", new { id = item.CategoryId })'>
+                        <span class="glyphicon glyphicon-trash" title="Delete" />
+                    </a>
+
+
+                </td>
+            </tr>
+            }
 
 </table>
