@@ -16,11 +16,14 @@ namespace HelpingHands.Controllers
             
             return View();
 
+        }
+        [HttpPost]
+        public ActionResult Contact(string text)
+        {
             return RedirectToAction("Sent");
 
         }
-
-
+        
 
         public ActionResult Sent()
         {
