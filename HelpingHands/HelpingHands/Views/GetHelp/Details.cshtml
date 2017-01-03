@@ -6,99 +6,127 @@
 
 <h2>Details</h2>
 
-<div>
-    <h4>Donation</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Category.Description)
-        </dt>
+<!--<div class="container">-->
+<hr />
+    <div class="row">
+        <div class="col-sm-6">
+            <div>
+                <h4>Donation</h4>
+                
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Category.Description)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Category.Description)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Category.Description)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Location.Name)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Location.Name)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Location.Name)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Location.Name)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Quantity)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Quantity)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Quantity)
-        </dd>        
+                    <dd>
+                        @Html.DisplayFor(model => model.Quantity)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Description)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Location.Address1)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Location.Address1)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Location.Address1)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Location.Address1)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Location.Address2)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Location.Address2)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Location.Address2)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Location.Address2)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Location.Phone)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Location.Phone)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Location.Phone)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Location.Phone)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Location.City)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Location.City)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Location.City)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Location.City)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Location.State)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Location.State)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Location.State)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Location.ZipCode)
-        </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Location.State)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Location.ZipCode)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Location.ZipCode)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Location.ZipCode)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Location.Hours)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Location.Hours)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Location.Hours)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Location.Hours)
+                    </dd>
 
-    </dl>
-</div>
-<p>    
-    @Html.ActionLink("Back to List", "Index")
-</p>
+                </dl>
+            </div>
+        </div>
+
+        <div class="col-sm-6 text-center" >
+            @{
+                string address = Model.Location.Address1 + " " + Model.Location.City + " " + Model.Location.State;
+            }
+
+            <p>Address: @address </p>
+
+            <script type="text/javascript" src="~/Scripts/GetMap.js"></script>
+            <script type="text/javascript">
+                var address = "@address";
+            </script>
+          <!--  <div style="margin:10px; padding:0px;border:5px;height:200px;width:200px">  -->
+            <div>
+                <div id="map_canvas" style="margin:10px; padding:0px; border:5px; height:350px; width:450px; align-content:center;" > </div>
+            </div>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPC0irOPZZS_q74c4UIfPiGS9hxeeqA5k&callback=initialize" async defer></script>
+
+        </div>
+    </div> 
+
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
+<!--</div> -->

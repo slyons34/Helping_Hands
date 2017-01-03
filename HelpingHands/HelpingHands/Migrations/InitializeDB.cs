@@ -84,6 +84,15 @@ namespace HelpingHands.Migrations
                 ConfirmPassword = "amh12345",
                 Role = "admin",                
             });
+            context.Users.Add(new User
+            {
+                Id = 1,
+                UserName = "hhadmin",
+                Email = "teamhelpinghands5@gmail.com",
+                Password = "hhadmin",
+                ConfirmPassword = "hhadmin",
+                Role = "admin",
+            });
             context.SaveChanges();
 
         }
