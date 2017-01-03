@@ -40,10 +40,14 @@
                         <li> @Html.ActionLink("GIVE-N-NEED", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
                         <li>@Html.ActionLink("Donate", "Index", "Donations", new { area = "" }, new { @class = "navbar-brand" })</li>
                         <li>@Html.ActionLink("Get Help", "Index", "GetHelp", new { area = "" }, new { @class = "navbar-brand" })</li>
-                        <li>@Html.ActionLink("Locations", "Index", "Locations", new { area = "" }, new { @class = "navbar-brand" })</li>
-                        <li>@Html.ActionLink("Categories", "Index", "Categories", new { area = "" }, new { @class = "navbar-brand" })</li>
-                        <li>@Html.ActionLink("Contact Us", "Contact", "ContactUs", new { area = "" }, new { @class = "navbar-brand" })</li>
 
+                        @if (User.Identity.IsAuthenticated && User.Identity.Name == "hhadmin")
+                        { 
+                            <li>@Html.ActionLink("Locations", "Index", "Locations", new { area = "" }, new { @class = "navbar-brand" })</li>
+                            <li>@Html.ActionLink("Categories", "Index", "Categories", new { area = "" }, new { @class = "navbar-brand" })</li>
+                        }
+
+                        <li>@Html.ActionLink("Contact Us", "Contact", "ContactUs", new { area = "" }, new { @class = "navbar-brand" })</li>
 
                         @if (User.Identity.IsAuthenticated)
                         {
