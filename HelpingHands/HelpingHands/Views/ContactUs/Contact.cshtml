@@ -8,12 +8,13 @@
 
 @using (Html.BeginForm())
 {
-<textarea id="TextArea1" rows="2" cols="20"></textarea> <input id="Submit1" type="submit" value="submit" />
-   
+<textarea id="TextArea1" rows="2" cols="20"></textarea> <input id="Submit1" type="submit" value="submit"    {
+        return RedirectToAction("Sent");
+    } />
+    
+
 }
-    {
-        return RedirectToAction("Sent"); 
-    }
+    
      
 
 <p>Please make checks payable to "Give-N-Need, Cleveland." <br />
