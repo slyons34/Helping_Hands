@@ -24,11 +24,15 @@ namespace HelpingHands.Controllers
             //where d.UserName.Equals(userName) select d).FirstOrDefault();
             //return View(donations);
 
-            var donations = db.Donations.Include(d => d.Category).Include(d => d.Location);            
+            //var donations = db.Donations.Include(d => d.Category).Include(d => d.Location);            
+
+            var donations = db.Donations.Where(d => d.UserName == userName).Include(d => d.Category).Include(d => d.Location);
+
             return View(donations.ToList());
         }
 
         // GET: Donations/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -44,6 +48,7 @@ namespace HelpingHands.Controllers
         }
 
         // GET: Donations/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Description");
@@ -56,6 +61,7 @@ namespace HelpingHands.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "Id,CategoryId,LocationId,UserName,Quantity,DateTime,Description")] Donation donation)
         {
             if (ModelState.IsValid)
@@ -71,6 +77,7 @@ namespace HelpingHands.Controllers
         }
 
         // GET: Donations/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -92,6 +99,7 @@ namespace HelpingHands.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "Id,CategoryId,LocationId,UserName,Quantity,DateTime,Description")] Donation donation)
         {
             if (ModelState.IsValid)
@@ -106,6 +114,7 @@ namespace HelpingHands.Controllers
         }
 
         // GET: Donations/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -123,6 +132,7 @@ namespace HelpingHands.Controllers
         // POST: Donations/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Donation donation = db.Donations.Find(id);
@@ -131,6 +141,7 @@ namespace HelpingHands.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         protected override void Dispose(bool disposing)
         {
             if (disposing)

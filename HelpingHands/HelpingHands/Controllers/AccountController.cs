@@ -14,17 +14,7 @@ namespace HelpingHands.Controllers
 {
     public class AccountController : Controller
     {
-        HelpingHandsEntities HelpingHandsDb = new HelpingHandsEntities();
-
-        //I will need something similar to carry the user through the Web
-
-        //private void MigrateShoppingCart(string UserName)
-        //{
-        //    // Associate shopping cart items with logged-in user
-        //    var cart = ShoppingCart.GetCart(this.HttpContext);
-        //    cart.MigrateCart(UserName);
-        //    Session[ShoppingCart.CartSessionKey] = UserName;
-        //}
+        HelpingHandsEntities HelpingHandsDb = new HelpingHandsEntities();        
 
         //
         // GET: /Account/LogOn

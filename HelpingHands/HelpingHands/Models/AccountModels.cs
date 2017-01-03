@@ -24,7 +24,7 @@ namespace HelpingHands.Models
         public string OldPassword { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 7)]
         [DataType(DataType.Password)]
         [Display(Name = "New password")]
         public string NewPassword { get; set; }
@@ -63,6 +63,8 @@ namespace HelpingHands.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "An User name is required")]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 5)]
+        [RegularExpression(@"[A-Za-z0-9]{5,20}", ErrorMessage = "User Name is is not valid, use letters and numbers please")]
         [Display(Name = "User name")]
         public string UserName { get; set; }
 
@@ -73,7 +75,7 @@ namespace HelpingHands.Models
         public string Email { get; set; }
 
         [Required(ErrorMessage = "A Password is required")]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 7)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }

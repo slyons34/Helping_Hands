@@ -97,8 +97,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Content\bootstrap.originalcss" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.original.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\BoxFood.jpg" />
+    <Content Include="Content\Images\FoodPantry.jpg" />
+    <Content Include="Content\Images\Hug.jpg" />
+    <Content Include="Content\Images\icon.jpg" />
+    <Content Include="Content\Images\icon2.jpg" />
+    <Content Include="Content\Images\SchoolSupplies.jpg" />
+    <Content Include="Content\Images\Toys.jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -106,6 +115,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\GetMap.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
