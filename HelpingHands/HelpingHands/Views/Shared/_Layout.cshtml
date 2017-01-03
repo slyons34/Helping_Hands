@@ -44,19 +44,7 @@
                         <li>@Html.ActionLink("Categories", "Index", "Categories", new { area = "" }, new { @class = "navbar-brand" })</li>
                         <li>@Html.ActionLink("Contact Us", "Contact", "ContactUs", new { area = "" }, new { @class = "navbar-brand" })</li>
 
-@*<<<<<<< HEAD
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    @*<li><img src="/images/logo/Member_Feeding_America_WH.png" alt="Member Feeding America " width="63" height="38"></li>*@
-                   <li> @Html.ActionLink("GIVE-N-NEED", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
-                    <li>@Html.ActionLink("Donate", "Index", "Donations", new { area = "" }, new { @class = "navbar-brand" })</li>
-                    <li>@Html.ActionLink("Get Help", "Index", "GetHelp", new { area = "" }, new { @class = "navbar-brand" })</li>
-                    <li>@Html.ActionLink("Locations", "Index", "Locations", new { area = "" }, new { @class = "navbar-brand" })</li>
-                    <li>@Html.ActionLink("Categories", "Index", "Categories", new { area = "" }, new { @class = "navbar-brand" })</li>
-                    <li>@Html.ActionLink("Contact Us", "Contact", "ContactUs", new { area = "" }, new { @class = "navbar-brand" })</li>                    
-                    
-=======
->>>>>>> origin/master*@
+
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="dropdown">
@@ -85,15 +73,25 @@
         @RenderBody()
         
         <hr />
-        <footer >
-            <p>&copy; @DateTime.Now.Year - Helping Hands - Give-N-Need</p>
+        <footer>
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>&copy; @DateTime.Now.Year - Helping Hands - Give-N-Need</p>
+                </div>
+                <div class="col-sm-6" style="text-align:center">
+                    <img src="~/Content/Images/Member_Feeding_America_WH.png" />
+                </div>
+
+                <div class="col-sm-6" style="text-align:center">
+                    <img src="~/Content/Images/Ohio_Assoc_Food_Banks_logo.png" />
+                </div>
+
+                </div> 
+
 
         </footer> 
         
     </div>
-
-
-
 
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
