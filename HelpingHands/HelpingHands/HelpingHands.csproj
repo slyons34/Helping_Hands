@@ -195,6 +195,7 @@
     <Content Include="Views\Donations\Index.cshtml" />
     <Content Include="Views\GetHelp\Index.cshtml" />
     <Content Include="Views\GetHelp\Details.cshtml" />
+    <Content Include="Views\ContactUs\Sent.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

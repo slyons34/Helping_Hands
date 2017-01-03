@@ -49,7 +49,7 @@ namespace HelpingHands.Migrations
                 Phone = "440-842-1614",
                 Hours = "9:00am - 1:00 pm"
             });
-            context.Locations.Add(new Location()
+            context.Locations.Add(new Location
             {
                 LocationId = 3,
                 Name = "Kosher Food Bank",
@@ -61,7 +61,7 @@ namespace HelpingHands.Migrations
                 Phone = "216-382-7202",
                 Hours = ""
             });
-            context.Locations.Add(new Location()
+            context.Locations.Add(new Location
             {
                 LocationId = 4,
                 Name = "Hunger Network of Greater Cleveland",
@@ -84,6 +84,7 @@ namespace HelpingHands.Migrations
                 ConfirmPassword = "amh12345",
                 Role = "admin",                
             });
+
             context.Users.Add(new User
             {
                 Id = 1,
@@ -93,6 +94,17 @@ namespace HelpingHands.Migrations
                 ConfirmPassword = "hhadmin",
                 Role = "admin",
             });
+
+            context.Users.Add(new User
+            {
+                Id = 1,
+                UserName = "mcmejorado",
+                Email = "lluvia_dgo@yahoo.com",
+                Password = "mcmejorado",
+                ConfirmPassword = "mcmejorado",
+                Role = "admin",
+            });
+
             context.SaveChanges();
 
         }

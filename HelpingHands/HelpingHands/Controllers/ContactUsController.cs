@@ -15,6 +15,13 @@ namespace HelpingHands.Controllers
             ViewBag.ContactName = "Helping Hands";
             
             return View();
+            
+        }
+
+        public ActionResult Sent()
+        {
+
+            return View();
         }
     }
 }
