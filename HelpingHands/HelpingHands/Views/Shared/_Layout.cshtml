@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Helping Hands - Give-N-Need Application</title>
+    <title>@ViewBag.Title - Helping Hands - Give-N-Need</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
@@ -44,6 +44,19 @@
                         <li>@Html.ActionLink("Categories", "Index", "Categories", new { area = "" }, new { @class = "navbar-brand" })</li>
                         <li>@Html.ActionLink("Contact Us", "Contact", "ContactUs", new { area = "" }, new { @class = "navbar-brand" })</li>
 
+@*<<<<<<< HEAD
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @*<li><img src="/images/logo/Member_Feeding_America_WH.png" alt="Member Feeding America " width="63" height="38"></li>*@
+                   <li> @Html.ActionLink("GIVE-N-NEED", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
+                    <li>@Html.ActionLink("Donate", "Index", "Donations", new { area = "" }, new { @class = "navbar-brand" })</li>
+                    <li>@Html.ActionLink("Get Help", "Index", "GetHelp", new { area = "" }, new { @class = "navbar-brand" })</li>
+                    <li>@Html.ActionLink("Locations", "Index", "Locations", new { area = "" }, new { @class = "navbar-brand" })</li>
+                    <li>@Html.ActionLink("Categories", "Index", "Categories", new { area = "" }, new { @class = "navbar-brand" })</li>
+                    <li>@Html.ActionLink("Contact Us", "Contact", "ContactUs", new { area = "" }, new { @class = "navbar-brand" })</li>                    
+                    
+=======
+>>>>>>> origin/master*@
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="dropdown">
@@ -73,7 +86,8 @@
         
         <hr />
         <footer >
-            <p>&copy; @DateTime.Now.Year - Helping Hands - Give-N-Need Application</p>
+            <p>&copy; @DateTime.Now.Year - Helping Hands - Give-N-Need</p>
+
         </footer> 
         
     </div>

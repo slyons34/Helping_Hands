@@ -6,7 +6,11 @@
 <h1>@ViewBag.ContactHeading</h1>
 <h2>@ViewBag.ContactName</h2>
 
+@using (Html.BeginForm())
+{
 <textarea id="TextArea1" rows="2" cols="20"></textarea> <input id="Submit1" type="submit" value="submit" />
+    
+}
 
 <p>Please make checks payable to "Give-N-Need, Cleveland." <br />
     And send to: <br />
