@@ -14,7 +14,7 @@ namespace HelpingHands
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            //Migrations.InitializeDB.Initialize();
+            Migrations.InitializeDB.Initialize();
         }
     }
 }
