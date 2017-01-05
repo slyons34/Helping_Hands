@@ -8,6 +8,27 @@
 <br />
 <!--#ff6600-->
 
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-lg-4 ">
+        </div>
+        <div class="col-lg-4" style="text-align :right">
+        </div>
+        <div class="col-lg-4" style="text-align:left ;">
+            <table>
+                <tr>
+                    <td><h4>Filter by </h4></td>
+                    <td>@Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "form-control", @style = "width:150px" })</td>
+                    <td><input type="submit" value="Filter" class="btn btn-default" /></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+}
+<br />
+<br />
+
 <table class="table table-striped">
     <thead style="background-color:#178acc;color:white">
         <tr>
@@ -45,11 +66,6 @@
                 </td>
                 <td>
                     @Html.ActionLink("Details", "Details", new { id = item.Id })
-                <!--    <a href='@Url.Action("Details", "GetHelp", new { id = item.Id })'>
-                        <span class="glyphicon glyphicon-list-alt" title="Detail" />
-                    </a>  -->
-
-
                 </td>
             </tr>
         }
